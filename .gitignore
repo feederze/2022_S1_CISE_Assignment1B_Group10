@@ -15,4 +15,4 @@
 /**/yarn-error.log*
 
 #credentials
-/config/default.json
+#/config/default.json
