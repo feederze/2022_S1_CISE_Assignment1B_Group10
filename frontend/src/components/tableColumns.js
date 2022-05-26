@@ -1,37 +1,37 @@
 const tablecolumns = [
   {
-    Header: "Title",
-    accessor: "title",
+    Header: 'Title',
+    accessor: 'title',
   },
   {
-    Header: "Authors",
-    accessor: "author",
+    Header: 'Authors',
+    accessor: 'author',
   },
   {
-    Header: "Source",
-    accessor: "source",
+    Header: 'Source',
+    accessor: 'source',
   },
   {
-    Header: "Pub. Year",
-    accessor: "publisheddate",
+    Header: 'Pub. Year',
+    accessor: 'publisheddate',
   },
   {
-    Header: "DOI",
-    accessor: "doi",
+    Header: 'DOI',
+    accessor: 'doi',
   },
   {
-    Header: "Claimed Benefit",
-    accessor: "claimed",
+    Header: 'Claimed Benefit',
+    accessor: 'claimed',
   },
   {
-    Header: "Level of Evidence",
-    accessor: "evidence",
+    Header: 'Level of Evidence',
+    accessor: 'evidence',
   },
   {
-    Header: "Current State",
-    accessor: "state",
+    Header: 'Current State',
+    accessor: 'state',
   },
-];
+]
 
-module.exports = tablecolumns;
+module.exports = tablecolumns
 //export default tablecolumns;

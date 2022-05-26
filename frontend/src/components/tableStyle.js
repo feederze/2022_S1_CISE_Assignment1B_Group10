@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-const Styles = styled.div `
+const Styles = styled.div`
   table {
     width: 100%;
     border-spacing: 0;
@@ -24,4 +24,4 @@ const Styles = styled.div `
     }
   }
 `
-export default Styles;
+export default Styles

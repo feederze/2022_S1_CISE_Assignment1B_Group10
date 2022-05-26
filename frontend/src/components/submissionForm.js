@@ -1,31 +1,31 @@
 //Done all together
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "../App.css";
-import axios from "axios";
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import '../App.css'
+import axios from 'axios'
 
 class SubmissionForm extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      title: "",
-      author: "",
-      source: "",
-      date: "",
-      doi: "",
-      practice: "",
-      claimed: "",
-      evidence: "",
-      state: "not moderated",
-    };
+      title: '',
+      author: '',
+      source: '',
+      date: '',
+      doi: '',
+      practice: '',
+      claimed: '',
+      evidence: '',
+      state: 'not moderated',
+    }
   }
 
-  onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
-  onSubmit = (e) => {
-    e.preventDefault();
+  onSubmit = e => {
+    e.preventDefault()
 
     const data = {
       title: this.state.title,
@@ -37,28 +37,28 @@ class SubmissionForm extends Component {
       claimed: this.state.claimed,
       evidence: this.state.evidence,
       state: this.state.state,
-    };
+    }
 
     axios
-      .post("http://localhost:12345/api/article/", data)
-      .then((res) => {
+      .post('http://localhost:12345/api/article/', data)
+      .then(res => {
         this.setState({
-          title: "",
-          author: "",
-          source: "",
-          date: "",
-          doi: "",
-          practice: "",
-          claimed: "",
-          evidence: "",
+          title: '',
+          author: '',
+          source: '',
+          date: '',
+          doi: '',
+          practice: '',
+          claimed: '',
+          evidence: '',
           // state:'',
-        });
-        this.props.history.push("/");
+        })
+        this.props.history.push('/')
       })
-      .catch((error) => {
-        console.log("Error in submission");
-      });
-  };
+      .catch(error => {
+        console.log('Error in submission')
+      })
+  }
   render() {
     return (
       <form noValidate onSubmit={this.onSubmit}>
@@ -164,7 +164,7 @@ class SubmissionForm extends Component {
 
         <input type="submit" />
       </form>
-    );
+    )
   }
 }
-export default SubmissionForm;
+export default SubmissionForm

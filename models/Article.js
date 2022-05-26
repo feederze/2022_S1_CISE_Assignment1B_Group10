@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const ArticleSchema = new mongoose.Schema({
   title: {
@@ -30,6 +30,6 @@ const ArticleSchema = new mongoose.Schema({
   state: {
     type: String,
   },
-});
+})
 
-module.exports = Article = mongoose.model("article", ArticleSchema);
+module.exports = Article = mongoose.model('article', ArticleSchema)

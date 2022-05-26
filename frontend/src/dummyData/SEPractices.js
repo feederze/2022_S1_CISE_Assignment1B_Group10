@@ -11,6 +11,6 @@ const SEPractices = [
     id: 3,
     practice: 'Not analysised',
   },
-];
+]
 
-export default SEPractices;
+export default SEPractices

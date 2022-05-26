@@ -1,13 +1,13 @@
-import React from "react";
-import { useTable, useSortBy, usePagination } from 'react-table';
+import React from 'react'
+import { useTable, useSortBy, usePagination } from 'react-table'
 
-const Table = ({columns, data}) => {
-const {
+const Table = ({ columns, data }) => {
+  const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     prepareRow,
-    
+
     page, // Instead of using 'rows', we'll use page,
     // which has only the rows for the active page
 
@@ -27,13 +27,13 @@ const {
       data,
       initialState: { pageIndex: 0 },
     },
-    
+
     useSortBy,
     usePagination
   )
   // Render Data Table UI
   return (
-      <>
+    <>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
@@ -68,9 +68,9 @@ const {
             )
           })}
         </tbody>
-      </table>  
-     {/* Pagination */}
-     <div className="pagination">
+      </table>
+      {/* Pagination */}
+      <div className="pagination">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
         </button>{' '}
@@ -86,7 +86,7 @@ const {
         <span>
           Page{' '}
           <strong>
-          {pageIndex + 1} of {pageOptions.length}
+            {pageIndex + 1} of {pageOptions.length}
           </strong>{' '}
         </span>
         <span>
@@ -115,8 +115,7 @@ const {
         </select>
       </div>
     </>
-
   )
-};
-  
-  export default Table;
+}
+
+export default Table
