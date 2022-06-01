@@ -4,7 +4,7 @@ function Home ()  {
     return (
       <div>
         <h2>This is a home page.</h2>
-        <h3> empty for now ! </h3>
+        <h3> Group 10 !! </h3>
       </div>
     );
   }

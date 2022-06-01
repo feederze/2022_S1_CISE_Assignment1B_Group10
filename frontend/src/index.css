@@ -1,9 +1,9 @@
 body {
   background-image: url(bg.jpg);
-  background-color: bisque;
-  width: 900px;
-  height: 750px;
-  margin: auto;
+  background-color: rgb(255, 195, 121);
+  width: 1920px;
+  height: 1080px;
+  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -12,21 +12,21 @@ body {
 }
 
 h1, h2, p, ul, li {
-  font-family: Helvetica;
+  font-family: Arial;
   color: #FFF;
 }
 
 ul.header li {
   display: inline;
   list-style-type: none;
-  margin: 0;
+  margin: auto;
 }
 ul.header {
-  background-color: rgba(0, 0, 0, 0.678);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100px; 
-  height: 560;
+  height: 800px;
   position: absolute;
-  right: 820px;
+  left: 100px;
   bottom: 50px;
   padding: 0;
 }
@@ -38,7 +38,7 @@ ul.header li a {
   display: inline-block;
 }
 .content {
-  background-color: rgba(0, 0, 0, 0.514);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 600px;
   height: 518px;
   position: absolute;
