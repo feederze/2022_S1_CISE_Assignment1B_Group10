@@ -29,15 +29,6 @@ router.post("/", (req, res) => {
     .catch((err) => res.status(400).json({ error: "Unable to add" }));
 });
 
-// @route GET api/article/searchArticle
-// @description get article by title
-// @access Public
-router.post('/search_article', (req, res) => {
-  Article.find({'title':req.body.title})
-    .then(articles => res.json(articles))
-    .catch(err => res.status(404).json({ nobooksfound: 'No article found' }));
-});
-
 // @route GET api/article/:id
 // @description Update article
 // @access Public
@@ -58,4 +49,35 @@ router.delete("/:id", (req, res) => {
     .catch((err) => res.status(404).json({ error: "No such a article" }));
 });
 
+router.post("/search_article_state", (req, res) => {
+  Article.find({ state: req.body.state })
+    .then((articles) => res.json(articles))
+    .catch((err) => res.status(404).json({ nobooksfound: "No article found" }));
+});
+
+router.post("/search_article", (req, res) => {
+  Article.find({ title: req.body.title })
+    .then((articles) => res.json(articles))
+    .catch((err) => res.status(404).json({ nobooksfound: "No article found" }));
+});
+
+router.post("/moderate/:id", (req, res) => {
+  Article.findByIdAndUpdate(req.params.id, { state: "moderated" })
+    .then((article) => res.json({ msg: "Updated successfully" }))
+    .catch((err) =>
+      res.status(400).json({ error: "Unable to update the Database" })
+    );
+});
+router.post("/analysis/:id", (req, res) => {
+  Article.findByIdAndUpdate(req.params.id, { state: "analysised" })
+    .then((article) => res.json({ msg: "Updated successfully" }))
+    .catch((err) =>
+      res.status(400).json({ error: "Unable to update the Database" })
+    );
+});
+// router.get("/:id", (req, res) => {
+//   Book.findById(req.params.id)
+//     .then((book) => res.json(book))
+//     .catch((err) => res.status(404).json({ nobookfound: "No Book found" }));
+// });
 module.exports = router;

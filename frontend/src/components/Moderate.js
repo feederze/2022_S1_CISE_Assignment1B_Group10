@@ -1,27 +1,23 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Styles from "./tableStyle";
+import Table from "./evidenceTable";
+import tablecolumns from "./tableColumnWithButtons";
 
-import Styles from "../components/tableStyle";
-import Table from "../components/evidenceTable";
-import tablecolumns from "../components/tableColumns";
-import Dropdown from "../components/dropDown";
-
-// import evidence from "./evidenceTable";
-// import { response } from "express";
-
-class Search extends Component {
+class Moderate extends Component {
   constructor(props) {
     super(props);
     this.state = {
       articles: [],
     };
   }
-  Search(Searchinput) {
+  componentDidMount() {
     let postdate = {
-      title: Searchinput,
+      state: "not moderated",
     };
     axios
-      .post("api/article/search_article", postdate)
+      .post("api/article/search_article_state", postdate)
       .then((res) => {
         this.setState({
           articles: res.data,
@@ -31,30 +27,31 @@ class Search extends Component {
         console.log("Error from ShowArticlesList");
       });
   }
-
+  Moderate(id) {
+    axios.post("api/article/moderate/" + id);
+    window.location.reload(false);
+  }
   render() {
     const articles = this.state.articles;
     console.log("Print Book: " + articles);
     let articleList;
 
-    if (articles) {
-      console.log("Its empty!");
+    if (!articles) {
       articleList = "there is no articles record!";
     } else {
+      articles?.forEach(
+        (article) =>
+          (article.action = (
+            <button onClick={() => this.Moderate(article._id)}>Moderate</button>
+            // <Link to={`../api/article/moderate/${article._id}`}>{"Moderate"}</Link>
+          ))
+      );
       articleList = articles.map((article, k) => (
         <Table article={article} key={k} />
       ));
     }
     return (
       <div>
-        <input
-          ref={(input) => {
-            this.search = input;
-          }}
-        />
-        <br></br>
-        <button onClick={() => this.Search(this.search.value)}>Search</button>
-        <br></br> <br></br>
         <Styles>
           <Table data={articles} columns={tablecolumns} />
         </Styles>
@@ -62,4 +59,4 @@ class Search extends Component {
     );
   }
 }
-export default Search;
+export default Moderate;

@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Styles from "../components/tableStyle";
 import Table from "../components/evidenceTable";
 import tablecolumns from "../components/tableColumns";
-import Dropdown from "../components/dropDown";
+// import Dropdown from "../components/dropDown";
 
 //this is an env.js file in src folder, import files must be located inside the src folder.
 import SEPractices from "../dummyData/SEPractices";
@@ -37,13 +37,6 @@ class SEPracticePage extends Component {
         this.setState({
           articles: res.data,
         });
-        /*
-        //update the state then render it again
-        this.setState({
-          //filter is used for future features: modera & analys
-          articles: res.data.filter((item) => item["Passed"]),
-        });
-        */
       })
       .catch((e) => console.log("No Articles are Found"));
   }
@@ -64,7 +57,7 @@ class SEPracticePage extends Component {
     return (
       <div>
         <h2>Select SE Practice to get evidence for the claimed benefits</h2>
-        <Dropdown />
+        {/* <Dropdown /> */}
         <Styles>
           <Table data={articles} columns={tablecolumns} />
         </Styles>
