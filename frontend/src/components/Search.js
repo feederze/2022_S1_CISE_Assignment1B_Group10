@@ -39,9 +39,13 @@ class Search extends Component{
         }
         return (
             <div>
-            <input ref={(input) => {this.search = input}}/>
-            
-            <button onClick={()=>this.Search(this.search.value)}>Search</button>
+            <input
+                type = "text"
+                name = "Article Name"
+            ></input>
+            <br></br>
+
+            <input type="Search" />
             {articleList}
             </div>
           
