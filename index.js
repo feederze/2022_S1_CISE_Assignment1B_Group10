@@ -16,8 +16,14 @@ connectDB();
 server.use(cors({ origin: true, credentials: true }));
 server.use(express.json({ extended: false }));
 server.use('/api/article',articles);
-server.get("/", (req, res) => {
-  res.send("yes yes captain");
+
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.get('*', (req,res) => {
+        res.sendFile(path.join(__dirname,'frontend','build','index.html'));
 });
+
+// server.get("/", (req, res) => {
+//   res.send("yes yes captain");
+// });
 
 server.listen(port, console.log(`server running on port ${port}`));
