@@ -17,8 +17,8 @@ server.use(cors({ origin: true, credentials: true }));
 server.use(express.json({ extended: false }));
 server.use('/api/article',articles);
 
-app.use(express.static(path.join(__dirname, "/frontend/build")));
-app.get('*', (req,res) => {
+server.use(express.static(path.join(__dirname, "/frontend/build")));
+server.get('*', (req,res) => {
         res.sendFile(path.join(__dirname,'frontend','build','index.html'));
 });
 
