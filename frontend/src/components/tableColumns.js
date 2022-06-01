@@ -31,7 +31,7 @@ const tablecolumns = [
     Header: 'Current State',
     accessor: 'state',
   },
-]
+];
 
-module.exports = tablecolumns
+module.exports = tablecolumns;
 //export default tablecolumns;

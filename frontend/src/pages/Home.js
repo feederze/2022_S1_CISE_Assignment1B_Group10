@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <br />
       <h2>Welcome to Software Practice Empirical Evidence Database (SPEED)</h2>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

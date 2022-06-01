@@ -1,12 +1,12 @@
 //Done all together
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import '../App.css'
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
+import axios from 'axios';
 
 class SubmissionForm extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       title: '',
       author: '',
@@ -17,15 +17,15 @@ class SubmissionForm extends Component {
       claimed: '',
       evidence: '',
       state: 'not moderated',
-    }
+    };
   }
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   onSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
 
     const data = {
       title: this.state.title,
@@ -37,7 +37,7 @@ class SubmissionForm extends Component {
       claimed: this.state.claimed,
       evidence: this.state.evidence,
       state: this.state.state,
-    }
+    };
 
     axios
       .post('http://localhost:12345/api/article/', data)
@@ -52,13 +52,13 @@ class SubmissionForm extends Component {
           claimed: '',
           evidence: '',
           // state:'',
-        })
-        this.props.history.push('/')
+        });
+        this.props.history.push('/');
       })
       .catch(error => {
-        console.log('Error in submission')
-      })
-  }
+        console.log('Error in submission');
+      });
+  };
   render() {
     return (
       <form noValidate onSubmit={this.onSubmit}>
@@ -164,7 +164,7 @@ class SubmissionForm extends Component {
 
         <input type="submit" />
       </form>
-    )
+    );
   }
 }
-export default SubmissionForm
+export default SubmissionForm;

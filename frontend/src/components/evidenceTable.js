@@ -1,5 +1,5 @@
-import React from 'react'
-import { useTable, useSortBy, usePagination } from 'react-table'
+import React from 'react';
+import { useTable, useSortBy, usePagination } from 'react-table';
 
 const Table = ({ columns, data }) => {
   const {
@@ -30,7 +30,7 @@ const Table = ({ columns, data }) => {
 
     useSortBy,
     usePagination
-  )
+  );
   // Render Data Table UI
   return (
     <>
@@ -58,14 +58,16 @@ const Table = ({ columns, data }) => {
         </thead>
         <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
-            prepareRow(row)
+            prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  );
                 })}
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
@@ -95,8 +97,8 @@ const Table = ({ columns, data }) => {
             type="number"
             defaultValue={pageIndex + 1}
             onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              gotoPage(page)
+              const page = e.target.value ? Number(e.target.value) - 1 : 0;
+              gotoPage(page);
             }}
             style={{ width: '100px' }}
           />
@@ -104,7 +106,7 @@ const Table = ({ columns, data }) => {
         <select
           value={pageSize}
           onChange={e => {
-            setPageSize(Number(e.target.value))
+            setPageSize(Number(e.target.value));
           }}
         >
           {[3, 7, 15].map(pageSize => (
@@ -115,7 +117,7 @@ const Table = ({ columns, data }) => {
         </select>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Table
+export default Table;

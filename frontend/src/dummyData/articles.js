@@ -54,5 +54,5 @@ const articles = [
     claim: 'code quality improvement',
     evidence: 'weak against',
   },
-]
-module.exports = articles
+];
+module.exports = articles;

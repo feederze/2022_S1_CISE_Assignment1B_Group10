@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Styles = styled.div`
   table {
@@ -23,5 +23,5 @@ const Styles = styled.div`
       }
     }
   }
-`
-export default Styles
+`;
+export default Styles;
