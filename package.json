@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently --kill-others-on-fail \"node index.js\" \"npm run start --prefix frontend\""
+    "start": "concurrently --kill-others-on-fail \"node index.js\" \"npm run start --prefix frontend\"",
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
