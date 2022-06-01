@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Dropdown from './dropDown';
+import evidence from './evidenceTable';
 import { response } from 'express';
 
 class Search extends Component{
@@ -35,17 +35,14 @@ class Search extends Component{
             articleList = "There is no articles record!";
         }
         else{
-            //articleList = article.map();
+            // articles.map();
         }
         return (
             <div>
-            <input
-                type = "text"
-                name = "Article Name"
-            ></input>
+            <input ref={(input) => {this.search = input}}/>
             <br></br>
 
-            <input type="Search" />
+            <button onClick={()=>this.Search(this.search.value)}>Search</button>
             {articleList}
             </div>
           
