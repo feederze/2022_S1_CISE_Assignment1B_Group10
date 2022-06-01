@@ -1,6 +1,6 @@
 body {
   background-image: url(bg.jpg);
-  background-color: rgb(255, 195, 121);
+  background-color: rgb(214, 255, 67);
   width: 1920px;
   height: 1080px;
   margin: 0;
@@ -13,7 +13,7 @@ body {
 
 h1, h2, p, ul, li {
   font-family: Arial;
-  color: #FFF;
+  color: rgb(0, 0, 0);
 }
 
 ul.header li {
@@ -22,25 +22,25 @@ ul.header li {
   margin: auto;
 }
 ul.header {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   width: 100px; 
-  height: 800px;
+  height: 700px;
   position: absolute;
   left: 100px;
-  bottom: 50px;
+  top: 124px;
   padding: 0;
 }
 ul.header li a {
-  color: #FFF;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   text-decoration: none;
   padding: 20px;
   display: inline-block;
 }
 .content {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   width: 600px;
-  height: 518px;
+  height: 700px;
   position: absolute;
   left: 400px;
   top: 124px;
@@ -54,5 +54,5 @@ ul.header li a {
   margin-bottom: auto;
 }
 .active {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }

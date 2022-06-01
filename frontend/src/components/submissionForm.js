@@ -40,7 +40,7 @@ class SubmissionForm extends Component {
     };
 
     axios
-      .post("http://localhost:12345/api/article/", data)
+      .post("https://y22s1-assignment1b-group10-ag.herokuapp.com/api/article/", data)
       .then((res) => {
         this.setState({
           title: "",
