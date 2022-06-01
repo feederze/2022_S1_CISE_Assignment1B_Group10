@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+
+import Styles from "../components/tableStyle";
+import Table from "../components/evidenceTable";
+import tablecolumns from "../components/tableColumns";
+import Dropdown from "../components/dropDown";
+
 // import evidence from "./evidenceTable";
 // import { response } from "express";
 
@@ -7,7 +13,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: [],
+      articles: [],
     };
   }
   Search(Searchinput) {
@@ -15,26 +21,28 @@ class Search extends Component {
       title: Searchinput,
     };
     axios
-      .post("api/article/SearchArticle", postdate)
+      .post("api/article/search_article", postdate)
       .then((res) => {
         this.setState({
-          article: res.data,
+          articles: res.data,
         });
       })
       .catch((err) => {
-        console.log("Error");
+        console.log("Error from ShowArticlesList");
       });
   }
 
   render() {
-    const article = this.state.article;
-    console.log("Print Book: " + article);
+    const articles = this.state.articles;
+    console.log("Print Book: " + articles);
     let articleList;
 
-    if (!article) {
-      articleList = "There is no articles record!";
+    if (!articles) {
+      articleList = "there is no articles record!";
     } else {
-      // articles.map();
+      articleList = articles.map((article, k) => (
+        <Table article={article} key={k} />
+      ));
     }
     return (
       <div>
@@ -44,9 +52,11 @@ class Search extends Component {
           }}
         />
         <br></br>
-
         <button onClick={() => this.Search(this.search.value)}>Search</button>
-        {articleList}
+        <br></br> <br></br>
+        <Styles>
+          <Table data={articles} columns={tablecolumns} />
+        </Styles>
       </div>
     );
   }
