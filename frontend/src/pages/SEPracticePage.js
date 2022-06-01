@@ -31,7 +31,7 @@ class SEPracticePage extends Component {
 
   //this is called, before browser render the page 
   componentDidMount() {
-    axios.get("http://localhost:12345/api/article")
+    axios.get("api/article")
       .then(res => {
         console.log(res.data);
         this.setState({
