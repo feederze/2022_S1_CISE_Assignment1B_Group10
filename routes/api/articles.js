@@ -1,5 +1,3 @@
-// routes/api/article.js
-
 const express = require('express')
 const router = express.Router()
 
@@ -17,7 +15,9 @@ router.get('/test', (req, res) => res.send('Article route testing!'))
 router.get('/', (req, res) => {
   Article.find()
     .then(article => res.json(article))
-    .catch(err => res.status(404).json({ nobooksfound: 'No matches found' }))
+    .catch(err =>
+      res.status(404).json({ noarticlesfound: 'No articles found!' })
+    )
 })
 
 // @route GET api/article
@@ -25,8 +25,8 @@ router.get('/', (req, res) => {
 // @access Public
 router.post('/', (req, res) => {
   Article.create(req.body)
-    .then(article => res.json({ msg: 'Added successfully' }))
-    .catch(err => res.status(400).json({ error: 'Unable to add' }))
+    .then(article => res.json({ msg: 'Added / saved successfully!' }))
+    .catch(err => res.status(400).json({ error: 'Unable to add!' }))
 })
 
 // @route GET api/article/:id
@@ -34,9 +34,9 @@ router.post('/', (req, res) => {
 // @access Public
 router.put('/:id', (req, res) => {
   Article.findByIdAndUpdate(req.params.id, req.body)
-    .then(article => res.json({ msg: 'Updated successfully' }))
+    .then(article => res.json({ msg: 'Updated successfully!' }))
     .catch(err =>
-      res.status(400).json({ error: 'Unable to update the database' })
+      res.status(400).json({ error: 'Unable to update the database!' })
     )
 })
 
@@ -45,8 +45,8 @@ router.put('/:id', (req, res) => {
 // @access Public
 router.delete('/:id', (req, res) => {
   Article.findByIdAndRemove(req.params.id, req.body)
-    .then(article => res.json({ mgs: 'Deleted successfully' }))
-    .catch(err => res.status(404).json({ error: 'Article does not exist' }))
+    .then(article => res.json({ mgs: 'Deleted successfully!' }))
+    .catch(err => res.status(404).json({ error: 'Article does not exist!' }))
 })
 
 module.exports = router

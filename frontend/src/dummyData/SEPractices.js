@@ -9,7 +9,7 @@ const SEPractices = [
   },
   {
     id: 3,
-    practice: 'Not analysised',
+    practice: 'Not analysed',
   },
 ]
 
