@@ -1,10 +1,10 @@
-import React from "react";
-import Analysis from "../components/Analysis";
+import React from 'react';
+import Analysis from '../components/Analysis';
 
 const AnalysisPage = () => {
   return (
     <div>
-      <h2>Analysis Article</h2>
+      <h2>Analyse Article</h2>
       <Analysis />
     </div>
   );

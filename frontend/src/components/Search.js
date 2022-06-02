@@ -39,7 +39,7 @@ class Search extends Component {
 
     if (articles) {
       console.log("Its empty!");
-      articleList = "there is no articles record!";
+      articleList = "There is no article recorded!";
     } else {
       articleList = articles.map((article, k) => (
         <Table article={article} key={k} />

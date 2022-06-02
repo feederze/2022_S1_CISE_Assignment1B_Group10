@@ -23,7 +23,7 @@ const articles = [
     _id: "3",
     title: 'Realizing quality improvement through test driven development: results and experiences of four industrial teams',
     authors: "Nagappan, N., Maximilien, E. M., Bhat, T., Williams, L.",
-    source: " Empirical Software Engineering, 13(3), 289–302",
+    source: " Empirical Software Engineering, 13(3), 289-302",
     pubyear: "2008",
     doi: "https://doi.org/10.1007/s10664-008-9062-z",
     claim: "product quality improvement", 
