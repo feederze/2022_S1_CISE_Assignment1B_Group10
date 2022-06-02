@@ -37,7 +37,7 @@ class Moderate extends Component {
     let articleList;
 
     if (!articles) {
-      articleList = "there is no articles record!";
+      articleList = "There is no article recorded!";
     } else {
       articles?.forEach(
         (article) =>

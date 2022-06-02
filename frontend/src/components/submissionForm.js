@@ -1,29 +1,29 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "../App.css";
-import axios from "axios";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
+import axios from 'axios';
 
 class SubmissionForm extends Component {
   constructor() {
     super();
     this.state = {
-      title: "",
-      author: "",
-      source: "",
-      date: "",
-      doi: "",
-      practice: "",
-      claimed: "",
-      evidence: "",
-      state: "not moderated",
+      title: '',
+      author: '',
+      source: '',
+      date: '',
+      doi: '',
+      practice: '',
+      claimed: '',
+      evidence: '',
+      state: 'not moderated',
     };
   }
 
-  onChange = (e) => {
+  onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
 
     const data = {
@@ -39,23 +39,23 @@ class SubmissionForm extends Component {
     };
 
     axios
-      .post("api/article/", data)
-      .then((res) => {
+      .post('api/article/', data)
+      .then(res => {
         this.setState({
-          title: "",
-          author: "",
-          source: "",
-          date: "",
-          doi: "",
-          practice: "",
-          claimed: "",
-          evidence: "",
+          title: '',
+          author: '',
+          source: '',
+          date: '',
+          doi: '',
+          practice: '',
+          claimed: '',
+          evidence: '',
           // state:'',
         });
-        this.props.history.push("/");
+        this.props.history.push('/');
       })
-      .catch((error) => {
-        console.log("Error in submission");
+      .catch(error => {
+        console.log('Error in submission');
       });
   };
   render() {
